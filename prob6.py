@@ -32,11 +32,17 @@ def prob6_sol1(xc, yc, xp, yp, rz):
     # Perform array addition
     print('global_point_array = center_point_array + product_array')
     global_point_array = center_point_array + product_array
+    print("- - new global points - - ")
     print(global_point_array)
 
     pass
 
 def prob6_sol2(xc, yc, xp, yp, rz):
+    # convert to radians
+    rz = rz * np.pi / 180
+
+    print(rz)
+
     # Default Python arithmetic solution
     c11 = np.cos(rz)
     print('C11', c11)
@@ -52,7 +58,7 @@ def prob6_sol2(xc, yc, xp, yp, rz):
     print('ypp', ypp)
     xg = xc + xpp  # —-xg,yg=rotated coordinates relative to xg,yg
     yg = yc + ypp
-    print('xg', xg)
-    print('yg', yg)
+    print("- - new global points - - ")
+    print('xg', xg, 'yg', yg)
 
     pass

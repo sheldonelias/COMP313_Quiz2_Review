@@ -8,6 +8,8 @@ def main():
 
     prob6.prob6_sol1(0,0,1,1,30)
 
+    prob6.prob6_sol2(0, 0, 1, 1, 30)
+
     pass
 
 main()
