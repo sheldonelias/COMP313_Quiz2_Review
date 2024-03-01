@@ -3,6 +3,11 @@ import numpy as np
 
 
 def prob6_sol1(xc, yc, xp, yp, rz):
+    #convert to radians
+    rz = rz * np.pi/180
+
+    print(rz)
+
     # Numpy solution with comments
     # Set up array with trig functions with rotation angle arg
     trig_array = np.array([[np.cos(rz), -np.sin(rz)], [np.sin(rz), np.cos(rz)]])
@@ -20,23 +25,13 @@ def prob6_sol1(xc, yc, xp, yp, rz):
     print(center_point_array)
 
     # Perform array multiplication
-    print('trig_array * local_point_array')
-    print(trig_array * local_point_array)
-    product_array = trig_array * local_point_array
-
-    # Transpose array product so that addition works correctly cols must become
-    # rows
-    print('np.transpose(product_array)')
-    print(np.transpose(product_array))
+    print('matmul(trig_array, local_point_array)')
+    print(np.matmul(trig_array, local_point_array))
+    product_array = np.matmul(trig_array, local_point_array)
 
     # Perform array addition
-    print('global_point_array = center_point_array + np.transpose(product_array)')
-    global_point_array = center_point_array + np.transpose(product_array)
-    print(global_point_array)
-
-    # Delete extra row hanging on from addition
-    print('1d global_point_array')
-    global_point_array = np.delete(global_point_array, 1, axis=0)
+    print('global_point_array = center_point_array + product_array')
+    global_point_array = center_point_array + product_array
     print(global_point_array)
 
     pass

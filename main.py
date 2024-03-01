@@ -6,6 +6,8 @@ import prob7
 
 def main():
 
+    prob6.prob6_sol1(0,0,1,1,30)
+
     pass
 
 main()
