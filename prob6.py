@@ -5,7 +5,7 @@ import numpy as np
 def prob6_sol1(xc, yc, xp, yp, rz):
     #convert to radians
     rz = rz * np.pi/180
-
+    print('rz in radians')
     print(rz)
 
     # Numpy solution with comments
@@ -13,25 +13,26 @@ def prob6_sol1(xc, yc, xp, yp, rz):
     trig_array = np.array([[np.cos(rz), -np.sin(rz)], [np.sin(rz), np.cos(rz)]])
     print('trig_array')
     print(trig_array)
-    print('local_point_array')
+
 
     # Set up array with local points
     local_point_array = np.array([xp, yp])
+    print('local_point_array')
     print(local_point_array)
-    print('center_point_array')
 
     # Set up array with center coords
     center_point_array = np.array([xc, yc])
+    print('center_point_array')
     print(center_point_array)
 
-    # Perform array multiplication
-    print('matmul(trig_array, local_point_array)')
+    # Perform array multiplication (not element by element)
     print(np.matmul(trig_array, local_point_array))
+    print('matmul(trig_array, local_point_array)')
     product_array = np.matmul(trig_array, local_point_array)
 
     # Perform array addition
-    print('global_point_array = center_point_array + product_array')
     global_point_array = center_point_array + product_array
+    print('global_point_array = center_point_array + product_array')
     print("- - new global points - - ")
     print(global_point_array)
 
